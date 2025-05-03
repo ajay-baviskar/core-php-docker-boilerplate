@@ -1,3 +1,6 @@
+<?php 
+setcookie("user","Ajay Baviskar", time() + 3600, '/');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><?php echo mktime()?></h1>
+    <?php 
+    if(isset($_COOKIE['user']))
+    {
+        echo "<p> Welcome ".$_COOKIE['user']. "</p>" ;
+    }else{
+        echo "welcome new user";
+    }
+
+    ?>
 </body>
 </html>
